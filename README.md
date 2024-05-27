@@ -103,7 +103,42 @@ data.dropna()
 data.drop_duplicates()
 ```
 
-17. **Data Selection:**
+17. **Removing Blank Spaces in a Column:**
+    - Use the `str.strip()` method to remove leading and trailing white spaces in a column.
+
+```python
+data['column_name'] = data['column_name'].str.strip()
+```
+
+18. **Handling missing values:**
+    - Fill missing values with a specific value.
+
+```python
+data.fillna(0, inplace=True)  # Replace NaN with 0
+data.fillna('unknown', inplace=True)  # Replace NaN with 'unknown'
+```
+
+19. **Removing unwanted columns:**
+
+```python
+data.drop(columns=['unwanted_column1', 'unwanted_column2'], inplace=True)
+```
+
+20. **Renaming columns for clarity:**
+
+```python
+data.rename(columns={'old_name1': 'new_name1', 'old_name2': 'new_name2'}, inplace=True)
+```
+
+21. **Changing the data type of columns:**
+
+```python
+data['column_name'] = data['column_name'].astype('int')  # Convert to integer
+data['column_name'] = data['column_name'].astype('float')  # Convert to float
+data['column_name'] = data['column_name'].astype('str')  # Convert to string
+```
+
+22. **Data Selection:**
     - Select specific columns or rows using Pandas indexing.
 
 ```python
@@ -112,46 +147,20 @@ data.loc[]
 data.iloc[]
 ```
 
-18. **Data Grouping:**
+23. **Data Grouping:**
     - Group data using the `groupby` function.
 
 ```python
 grouped = data.groupby('column_name')
 ```
 
-19. **Removing Blank Spaces in a Column:**
-    - Use the `str.strip()` method to remove leading and trailing white spaces in a column.
+24. **Handling outliers:**
+    - Remove outliers based on z-score.
 
 ```python
-data['column_name'] = data['column_name'].str.strip()
-```
+from scipy import stats
 
-20. **Handling missing values:**
-    - Fill missing values with a specific value.
-
-```python
-data.fillna(0, inplace=True)  # Replace NaN with 0
-data.fillna('unknown', inplace=True)  # Replace NaN with 'unknown'
-```
-
-21. **Removing unwanted columns:**
-
-```python
-data.drop(columns=['unwanted_column1', 'unwanted_column2'], inplace=True)
-```
-
-22. **Renaming columns for clarity:**
-
-```python
-data.rename(columns={'old_name1': 'new_name1', 'old_name2': 'new_name2'}, inplace=True)
-```
-
-23. **Changing the data type of columns:**
-
-```python
-data['column_name'] = data['column_name'].astype('int')  # Convert to integer
-data['column_name'] = data['column_name'].astype('float')  # Convert to float
-data['column_name'] = data['column_name'].astype('str')  # Convert to string
+data = data[(np.abs(stats.zscore(data['numeric_column'])) < 3)]
 ```
 
 ## Data Analysis and Visualization
