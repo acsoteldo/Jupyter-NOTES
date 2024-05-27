@@ -165,7 +165,7 @@ data = data[(np.abs(stats.zscore(data['numeric_column'])) < 3)]
 
 ## Data Analysis and Visualization
 
-24. **Matplotlib and Seaborn:**
+25. **Matplotlib and Seaborn:**
     - Import libraries: `import matplotlib.pyplot as plt`, `import seaborn as sns`.
 
 ```python
@@ -173,7 +173,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 ```
 
-25. **NumPy:**
+26. **NumPy:**
     - Import NumPy: `import numpy as np`.
     - Perform mathematical operations on arrays.
 
@@ -183,19 +183,19 @@ import numpy as np
 
 ## Keyboard Shortcuts
 
-26. **Keyboard Shortcuts:**
+27. **Keyboard Shortcuts:**
     - Press `H` in command mode to view keyboard shortcuts.
     - Learn and use common shortcuts to increase productivity.
 
 ## Saving and Exporting
 
-27. **Saving the cleaned data to a new Excel file:**
+28. **Saving the cleaned data to a new Excel file:**
 ```python
 data.to_excel('cleaned_file.xlsx', index=False)
 ```
 
-28. **Saving a Notebook:**
+29. **Saving a Notebook:**
     - Use "File" > "Save and Checkpoint" to save your notebook.
 
-29. **Exporting Notebooks:**
+30. **Exporting Notebooks:**
     - Export notebooks to various formats like HTML, PDF, and more using "File" > "Download as".
